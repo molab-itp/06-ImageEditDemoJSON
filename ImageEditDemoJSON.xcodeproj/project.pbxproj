@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB21032129A34767008C89F2 /* ImageEditDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEditDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB21032129A34767008C89F2 /* ImageEditDemoJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEditDemoJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB21032429A34767008C89F2 /* ImageEditDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditDemoApp.swift; sourceTree = "<group>"; };
 		AB21032629A34767008C89F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB21032829A34768008C89F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		AB21032229A34767008C89F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB21032129A34767008C89F2 /* ImageEditDemo.app */,
+				AB21032129A34767008C89F2 /* ImageEditDemoJSON.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,9 +99,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB21032029A34767008C89F2 /* ImageEditDemo */ = {
+		AB21032029A34767008C89F2 /* ImageEditDemoJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB21032F29A34768008C89F2 /* Build configuration list for PBXNativeTarget "ImageEditDemo" */;
+			buildConfigurationList = AB21032F29A34768008C89F2 /* Build configuration list for PBXNativeTarget "ImageEditDemoJSON" */;
 			buildPhases = (
 				AB21031D29A34767008C89F2 /* Sources */,
 				AB21031E29A34767008C89F2 /* Frameworks */,
@@ -111,9 +111,9 @@
 			);
 			dependencies = (
 			);
-			name = ImageEditDemo;
+			name = ImageEditDemoJSON;
 			productName = ImageEditDemo;
-			productReference = AB21032129A34767008C89F2 /* ImageEditDemo.app */;
+			productReference = AB21032129A34767008C89F2 /* ImageEditDemoJSON.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,7 +131,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AB21031C29A34767008C89F2 /* Build configuration list for PBXProject "ImageEditDemo" */;
+			buildConfigurationList = AB21031C29A34767008C89F2 /* Build configuration list for PBXProject "ImageEditDemoJSON" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB21032029A34767008C89F2 /* ImageEditDemo */,
+				AB21032029A34767008C89F2 /* ImageEditDemoJSON */,
 			);
 		};
 /* End PBXProject section */
@@ -360,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB21031C29A34767008C89F2 /* Build configuration list for PBXProject "ImageEditDemo" */ = {
+		AB21031C29A34767008C89F2 /* Build configuration list for PBXProject "ImageEditDemoJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB21032D29A34768008C89F2 /* Debug */,
@@ -369,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB21032F29A34768008C89F2 /* Build configuration list for PBXNativeTarget "ImageEditDemo" */ = {
+		AB21032F29A34768008C89F2 /* Build configuration list for PBXNativeTarget "ImageEditDemoJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB21033029A34768008C89F2 /* Debug */,

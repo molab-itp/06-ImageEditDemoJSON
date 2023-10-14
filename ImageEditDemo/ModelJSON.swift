@@ -58,7 +58,8 @@ extension Model {
             self = try decoder.decode(Model.self, from: jsonData!)
             //
         } catch {
-            fatalError("Model init error \(error)")
+            // fatalError("Model init error \(error)")
+            print("Model init JSONfileName error \(error)")
         }
     }
 }
