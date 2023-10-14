@@ -4,8 +4,8 @@
 
 import Foundation
 
-struct ItemModel : Identifiable {
-    let id = UUID()
+struct ItemModel : Identifiable, Hashable, Encodable, Decodable {
+    var id = UUID()
     var urlStr:String = ""
     var label:String = ""
     var assetName:String = ""

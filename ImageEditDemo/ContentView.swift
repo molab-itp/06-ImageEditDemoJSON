@@ -11,7 +11,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 // Display in reverse order to see new additions first
-                ForEach(document.items.reversed()) { item in
+                ForEach(document.model.items.reversed()) { item in
                     NavigationLink(
                         destination:
                             // ItemDetail(item: item)
