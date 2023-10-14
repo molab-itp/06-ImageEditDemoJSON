@@ -7,7 +7,12 @@ import Foundation
 class Document: ObservableObject {
     @Published var model: Model
     // @Published var items:[ItemModel]
+    
+    // file name to store JSON for model items
     let saveFileName = "model.json"
+    
+    // true to initialize model items with sample items
+    let initSampleItems = false
     
     init() {
         print("Model init")
@@ -20,11 +25,13 @@ class Document: ObservableObject {
         //    ItemModel(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog"),
         //    ItemModel(urlStr: imageArray[0], label:"dan", systemName: "circle"),
         //]
-        // Uncomment addItem for testing
-//        addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle");
-//        addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog");
-//        addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "circle");
-//        saveModel();
+        if initSampleItems {
+            model.items = []
+            addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle");
+            addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog");
+            addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "circle");
+            saveModel();
+        }
     }
     
     func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
