@@ -12,7 +12,7 @@ class Document: ObservableObject {
     let saveFileName = "model.json"
     
     // true to initialize model items with sample items
-    let initSampleItems = false
+    let initSampleItems = true
     
     init() {
         print("Model init")
@@ -25,11 +25,11 @@ class Document: ObservableObject {
         //    ItemModel(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog"),
         //    ItemModel(urlStr: imageArray[0], label:"dan", systemName: "circle"),
         //]
-        if initSampleItems {
+        if initSampleItems && model.items.isEmpty {
             model.items = []
-            addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle");
-            addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog");
-            addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "circle");
+            addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "dog");
+            addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "circle");
+            addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "rectangle");
             saveModel();
         }
     }
