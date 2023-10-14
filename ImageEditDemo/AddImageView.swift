@@ -34,7 +34,7 @@ struct AddImageView: View {
             HStack {
                 Button("Add") {
                     print("AddImageView Add")
-                    let _ = document.addItem(urlStr: urlStr, label: label,
+                    document.addItem(urlStr: urlStr, label: label,
                                              assetName: assetName, systemName: systemName)
                     dismiss()
                 }

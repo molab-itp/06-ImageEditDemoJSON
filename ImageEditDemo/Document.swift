@@ -6,58 +6,51 @@ import Foundation
 
 class Document: ObservableObject {
     @Published var model: Model
-//    @Published var items:[ItemModel]
+    // @Published var items:[ItemModel]
     init() {
         print("Model init")
         // items for testing
         model = Model();
         // Would be better design practice to move all items operations
         // to Model funcs
-        model.items = [
-            // ItemModel(urlStr: imageArray[0], label:"Dan O"),
-            // ItemModel(urlStr: imageArray[1], label:"Ari"),
-            // ItemModel(urlStr: imageArray[2], label:"Gabe"),
-            // ItemModel(urlStr: imageArray[3], label:"Sarah"),
-            // ItemModel(urlStr: imageArray[4], label:"Clay"),
-            // ItemModel(urlStr: imageArray[5], label:"Katherine"),
-            // ItemModel(urlStr: imageArray[6], label:"Pedro"),
-            // ItemModel(urlStr: imageArray[7], label:"Luisa"),
-            // ItemModel(urlStr: imageArray[8], label:"Raaziq"),
-            ItemModel(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle"),
-            ItemModel(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog"),
-            ItemModel(urlStr: imageArray[0], label:"dan", systemName: "circle"),
-        ]
+        //model.items = [
+        //    ItemModel(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle"),
+        //    ItemModel(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog"),
+        //    ItemModel(urlStr: imageArray[0], label:"dan", systemName: "circle"),
+        //]
+        addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle");
+        addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog");
+        addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "circle");
     }
     
-    func addItem(urlStr:String, label:String, assetName:String, systemName: String) -> ItemModel {
-        let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
-        model.items.append(item)
-        return item
+    func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
+        // let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
+        // model.items.append(item)
+        model.addItem(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
     }
     
-    func newItem() -> ItemModel {
-        return addItem(urlStr: "", label: "", assetName: "", systemName: "")
-    }
+//    func newItem() {
+//        addItem(urlStr: "", label: "", assetName: "", systemName: "")
+//    }
     
     func updateItem(id: UUID, urlStr:String, label:String, assetName:String, systemName: String) {
-        if let index = findIndex(id) {
-            model.items[index].id = UUID()
-            model.items[index].urlStr = urlStr
-            model.items[index].label = label
-            model.items[index].assetName = assetName
-            model.items[index].systemName = systemName
-        }
+        model.updateItem(id: id, urlStr:urlStr, label:label, assetName: assetName, systemName: systemName);
+        // if let index = findIndex(id) {
+        //  model.items[index].id = UUID()
+        //  model.items[index].urlStr = urlStr
+        //  model.items[index].label = label
+        //  model.items[index].assetName = assetName
+        //  model.items[index].systemName = systemName
+        //  }
     }
     
     func deleteItem(id: UUID) {
-        if let index = findIndex(id) {
-            model.items.remove(at: index)
-        }
+        model.deleteItem(id: id)
+        // if let index = findIndex(id) {
+        //  model.items.remove(at: index)
+        // }
     }
     
-    func findIndex(_ id: UUID) -> Int? {
-        return model.items.firstIndex { item in item.id == id }
-    }
 }
 
 // Array of image url strings
