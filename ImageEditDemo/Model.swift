@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Model: Encodable, Decodable {
+struct Model: Codable {
     var items: [ItemModel]
     
     init () {

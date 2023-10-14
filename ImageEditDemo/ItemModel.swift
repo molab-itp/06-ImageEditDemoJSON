@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ItemModel : Identifiable, Hashable, Encodable, Decodable {
+struct ItemModel : Identifiable, Hashable, Codable {
     var id = UUID()
     var urlStr:String = ""
     var label:String = ""
