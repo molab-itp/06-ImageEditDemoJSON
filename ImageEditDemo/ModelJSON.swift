@@ -47,7 +47,7 @@ extension Model {
             let filePath = directory.appendingPathComponent(fileName);
             let filePathExists = fileMan.fileExists(atPath: filePath.path)
             if !filePathExists {
-                print("Model init not filePath \(filePath as Any)")
+                print("Model init NO file at filePath \(filePath as Any)")
                 return
             }
             print("Model init filePath \(filePath as Any)")

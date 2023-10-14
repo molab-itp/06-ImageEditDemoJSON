@@ -7,10 +7,12 @@ import Foundation
 class Document: ObservableObject {
     @Published var model: Model
     // @Published var items:[ItemModel]
+    let saveFileName = "model.json"
+    
     init() {
         print("Model init")
         // items for testing
-        model = Model();
+        model = Model(JSONfileName: saveFileName);
         // Would be better design practice to move all items operations
         // to Model funcs
         //model.items = [
@@ -18,21 +20,20 @@ class Document: ObservableObject {
         //    ItemModel(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog"),
         //    ItemModel(urlStr: imageArray[0], label:"dan", systemName: "circle"),
         //]
-        addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle");
-        addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog");
-        addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "circle");
+        // Uncomment addItem for testing
+//        addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle");
+//        addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog");
+//        addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "circle");
+//        saveModel();
     }
     
     func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
         // let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
         // model.items.append(item)
-        model.addItem(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
+        model.addItem(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName);
+        saveModel();
     }
-    
-//    func newItem() {
-//        addItem(urlStr: "", label: "", assetName: "", systemName: "")
-//    }
-    
+        
     func updateItem(id: UUID, urlStr:String, label:String, assetName:String, systemName: String) {
         model.updateItem(id: id, urlStr:urlStr, label:label, assetName: assetName, systemName: systemName);
         // if let index = findIndex(id) {
@@ -42,6 +43,7 @@ class Document: ObservableObject {
         //  model.items[index].assetName = assetName
         //  model.items[index].systemName = systemName
         //  }
+        saveModel();
     }
     
     func deleteItem(id: UUID) {
@@ -49,8 +51,18 @@ class Document: ObservableObject {
         // if let index = findIndex(id) {
         //  model.items.remove(at: index)
         // }
+        saveModel();
     }
     
+    func saveModel() {
+        print("Document saveModel")
+        model.saveAsJSON(fileName: saveFileName)
+    }
+    
+    // Not used
+    //    func newItem() {
+    //        addItem(urlStr: "", label: "", assetName: "", systemName: "")
+    //    }
 }
 
 // Array of image url strings
