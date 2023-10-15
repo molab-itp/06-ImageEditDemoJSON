@@ -38,3 +38,8 @@ struct ItemRow: View {
 }
 
 
+struct ItemRow_Previews: PreviewProvider {
+    static var previews: some View {
+        ItemRow(item: ItemModel(label: "I am not a fish", systemName: "fish"))
+    }
+}

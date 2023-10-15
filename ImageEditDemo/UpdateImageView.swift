@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct UpdateImageView: View {
-    var action: String // "Update" or "Add"
     @State var item: ItemModel
     
     @State var uiImage:UIImage?
@@ -66,6 +65,6 @@ struct UpdateImageView: View {
 
 struct UpdateImageView_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateImageView(action: "action", item: ItemModel())
+        UpdateImageView(item: ItemModel())
     }
 }

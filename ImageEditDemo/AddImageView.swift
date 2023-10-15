@@ -3,8 +3,13 @@
 //
 
 import SwiftUI
-import PhotosUI
 
+// AddImageView is very similar to UpdateImageView
+// consider refactoring into single View with property vars
+// for the differences
+//  Button Add/Cancel
+//  Button Update/Delete
+//
 struct AddImageView: View {
     @State var item: ItemModel
     

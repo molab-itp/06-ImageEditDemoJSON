@@ -59,3 +59,8 @@ struct ItemDetail: View {
     }
 }
 
+struct ItemDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        ItemDetail(item: ItemModel())
+    }
+}
