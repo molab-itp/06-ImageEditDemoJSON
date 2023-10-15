@@ -14,14 +14,7 @@ struct ContentView: View {
                 ForEach(document.model.items.reversed()) { item in
                     NavigationLink(
                         destination:
-                            // ItemDetail(item: item)
-                        // UpdateImageView(item: item)
-                        UpdateImageView(action: "Update",
-                                        id: item.id,
-                                        urlStr: item.urlStr,
-                                        label: item.label,
-                                        assetName: item.assetName,
-                                        systemName: item.systemName)
+                        UpdateImageView(action: "Update", item: item)
                     )
                     {
                         ItemRow(item: item)
@@ -33,7 +26,7 @@ struct ContentView: View {
                 trailing:
                     NavigationLink(
                         destination:
-                            AddImageView()
+                            AddImageView(item: ItemModel())
                     )
                 {
                     Text("Add Image")

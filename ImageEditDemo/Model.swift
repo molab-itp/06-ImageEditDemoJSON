@@ -14,16 +14,13 @@ struct Model: Codable {
         items = [];
     }
     
-    mutating func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
-        let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
+    mutating func addItem(item: ItemModel) {
         items.append(item)
     }
     
-    mutating func updateItem(id: UUID, urlStr:String, label:String, assetName:String, systemName: String) {
-        if let index = findIndex(id) {
-            let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
+    mutating func updateItem(item: ItemModel) {
+        if let index = findIndex(item.id) {
             items[index] = item;
-            items[index].id = UUID()
         }
     }
     

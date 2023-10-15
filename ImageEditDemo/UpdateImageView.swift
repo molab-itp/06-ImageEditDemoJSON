@@ -9,12 +9,7 @@ import SwiftUI
 
 struct UpdateImageView: View {
     var action: String // "Update" or "Add"
-    var id: UUID
-    
-    @State var urlStr:String = ""
-    @State var label:String = ""
-    @State var assetName:String = ""
-    @State var systemName:String = ""
+    @State var item: ItemModel
     
     @State var uiImage:UIImage?
     
@@ -24,7 +19,7 @@ struct UpdateImageView: View {
     var body: some View {
         VStack {
             ZStack {
-                Image(assetName)
+                Image(item.assetName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 if let uiImage {
@@ -32,46 +27,45 @@ struct UpdateImageView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                Image(systemName: systemName)
+                Image(systemName: item.systemName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
             HStack {
                 Button("Update") {
                     print("UpdateImageView Update")
-                    document.updateItem(id: id, urlStr: urlStr, label: label,
-                                        assetName: assetName, systemName: systemName)
+                    document.updateItem(item: item)
                     dismiss()
                 }
                 Spacer()
                 Button("Delete") {
-                    document.deleteItem(id: id)
+                    document.deleteItem(id: item.id)
                     dismiss();
                 }
             }.padding(10)
             Form {
-                TextField("url", text: $urlStr)
+                TextField("url", text: $item.urlStr)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
-                TextField("label", text: $label)
+                TextField("label", text: $item.label)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
-                TextField("assetName", text: $assetName)
+                TextField("assetName", text: $item.assetName)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
-                TextField("systemName", text: $systemName)
+                TextField("systemName", text: $item.systemName)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
             }
         }
         .task {
-            uiImage =  await imageFor(string: urlStr)
+            uiImage =  await imageFor(string: item.urlStr)
         }
     }
 }
 
 struct UpdateImageView_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateImageView(action: "action", id: UUID())
+        UpdateImageView(action: "action", item: ItemModel())
     }
 }

@@ -16,16 +16,9 @@ class Document: ObservableObject {
     
     init() {
         print("Model init")
-        // items for testing
         model = Model(JSONfileName: saveFileName);
-        // Would be better design practice to move all items operations
-        // to Model funcs
-        //model.items = [
-        //    ItemModel(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "rectangle"),
-        //    ItemModel(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "dog"),
-        //    ItemModel(urlStr: imageArray[0], label:"dan", systemName: "circle"),
-        //]
         if initSampleItems && model.items.isEmpty {
+            // items for testing
             model.items = []
             addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "dog");
             addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "circle");
@@ -35,29 +28,23 @@ class Document: ObservableObject {
     }
     
     func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
-        // let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
-        // model.items.append(item)
-        model.addItem(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName);
+        let item = ItemModel(id: UUID(), urlStr: urlStr, label: label, assetName: assetName, systemName: systemName);
+        model.addItem(item: item);
         saveModel();
     }
-        
-    func updateItem(id: UUID, urlStr:String, label:String, assetName:String, systemName: String) {
-        model.updateItem(id: id, urlStr:urlStr, label:label, assetName: assetName, systemName: systemName);
-        // if let index = findIndex(id) {
-        //  model.items[index].id = UUID()
-        //  model.items[index].urlStr = urlStr
-        //  model.items[index].label = label
-        //  model.items[index].assetName = assetName
-        //  model.items[index].systemName = systemName
-        //  }
+    
+    func addItem(item: ItemModel) {
+        model.addItem(item: item);
+        saveModel();
+    }
+
+    func updateItem(item: ItemModel) {
+        model.updateItem(item: item);
         saveModel();
     }
     
     func deleteItem(id: UUID) {
         model.deleteItem(id: id)
-        // if let index = findIndex(id) {
-        //  model.items.remove(at: index)
-        // }
         saveModel();
     }
     
