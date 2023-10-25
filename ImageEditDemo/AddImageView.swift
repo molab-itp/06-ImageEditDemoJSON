@@ -21,17 +21,21 @@ struct AddImageView: View {
     var body: some View {
         VStack {
             ZStack {
-                Image(item.assetName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                if !item.assetName.isEmpty {
+                    Image(item.assetName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
                 if let uiImage {
                     Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                Image(systemName: item.systemName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                if !item.systemName.isEmpty {
+                    Image(systemName: item.systemName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
             }
             HStack {
                 Button("Add") {
