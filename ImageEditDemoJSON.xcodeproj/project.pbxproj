@@ -18,6 +18,7 @@
 		AB21033F29A347E9008C89F2 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21033729A347E9008C89F2 /* AddImageView.swift */; };
 		AB21034029A347E9008C89F2 /* UpdateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21033829A347E9008C89F2 /* UpdateImageView.swift */; };
 		AB40EB0B2ADAF1CA002BF2B0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40EB0A2ADAF1CA002BF2B0 /* Model.swift */; };
+		AB6FCC992AE943D700DDB893 /* SaveLoadJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6FCC982AE943D700DDB893 /* SaveLoadJSON.swift */; };
 		ABF873BD2ADB02A40021EA62 /* ModelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF873BC2ADB02A40021EA62 /* ModelJSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		AB21033829A347E9008C89F2 /* UpdateImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateImageView.swift; sourceTree = "<group>"; };
 		AB21034229A350E0008C89F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AB40EB0A2ADAF1CA002BF2B0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AB6FCC982AE943D700DDB893 /* SaveLoadJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadJSON.swift; sourceTree = "<group>"; };
 		ABF873BC2ADB02A40021EA62 /* ModelJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				AB21033429A347E9008C89F2 /* Document.swift */,
 				AB40EB0A2ADAF1CA002BF2B0 /* Model.swift */,
 				ABF873BC2ADB02A40021EA62 /* ModelJSON.swift */,
+				AB6FCC982AE943D700DDB893 /* SaveLoadJSON.swift */,
 				AB21033629A347E9008C89F2 /* ItemModel.swift */,
 				AB21033529A347E9008C89F2 /* image.swift */,
 				AB21032829A34768008C89F2 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 			files = (
 				AB21032729A34767008C89F2 /* ContentView.swift in Sources */,
 				ABF873BD2ADB02A40021EA62 /* ModelJSON.swift in Sources */,
+				AB6FCC992AE943D700DDB893 /* SaveLoadJSON.swift in Sources */,
 				AB21032529A34767008C89F2 /* ImageEditDemoApp.swift in Sources */,
 				AB21034029A347E9008C89F2 /* UpdateImageView.swift in Sources */,
 				AB21033B29A347E9008C89F2 /* ItemRow.swift in Sources */,

@@ -16,6 +16,10 @@ class Document: ObservableObject {
     
     init() {
         print("Model init")
+        
+        // For testing:
+//         remove(fileName: saveFileName)
+        
         model = Model(JSONfileName: saveFileName);
         if initSampleItems && model.items.isEmpty {
             // items for testing
@@ -30,7 +34,6 @@ class Document: ObservableObject {
     func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
         let item = ItemModel(id: UUID(), urlStr: urlStr, label: label, assetName: assetName, systemName: systemName);
         model.addItem(item: item);
-        saveModel();
     }
     
     func addItem(item: ItemModel) {

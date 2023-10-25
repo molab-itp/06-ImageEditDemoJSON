@@ -13,20 +13,24 @@ struct ItemRow: View {
     var body: some View {
         HStack {
             ZStack {
-                Image(item.assetName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:100, height: 100)
+                if !item.assetName.isEmpty {
+                    Image(item.assetName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:100, height: 100)
+                }
                 if let uiImage {
                     Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width:100, height: 100)
                 }
-                Image(systemName: item.systemName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:100, height: 100)
+                if !item.systemName.isEmpty {
+                    Image(systemName: item.systemName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:100, height: 100)
+                }
             }
             Text(item.label)
             Spacer()
