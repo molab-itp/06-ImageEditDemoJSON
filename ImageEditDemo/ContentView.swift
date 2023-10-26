@@ -10,6 +10,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                
+                //test
                 // Display in reverse order to see new additions first
                 ForEach(document.model.items.reversed()) { item in
                     NavigationLink( destination:
