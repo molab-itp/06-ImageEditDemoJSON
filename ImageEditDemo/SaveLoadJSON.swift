@@ -6,6 +6,8 @@
 
 import Foundation
 
+//where is generic defined? whats this? encodable?
+
 // Write a value to file that will be stored in the documents directory as JSON
 //  fileName - name of file with to store
 //  val - the value to store in the file
