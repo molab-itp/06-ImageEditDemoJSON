@@ -23,7 +23,7 @@ func saveJSON<T: Encodable>(fileName: String, val: T) throws {
     let str = String(data: jsonData, encoding: .utf8)!
     // print("Model saveAsJSON encode str \(str)")
     
-    try str.write(to: filePath, atomically: true, encoding: .utf8)
+    try str.write(to: filePath, atomically: true, encoding: .utf8) // this is a comment from june in class oct.26th
 }
 
 // Read a value stored as JSON from a file in the documents directory
