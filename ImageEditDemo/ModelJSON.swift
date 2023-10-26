@@ -1,6 +1,7 @@
 //
 //  ModelJSON.swift
 //  Created by jht2 on 1/15/22.
+//
 
 import SwiftUI
 
