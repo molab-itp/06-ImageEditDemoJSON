@@ -18,7 +18,7 @@ class Document: ObservableObject {
         print("Model init")
         
         // For testing:
-//         remove(fileName: saveFileName)
+         remove(fileName: saveFileName)
         
         model = Model(JSONfileName: saveFileName);
         if initSampleItems && model.items.isEmpty {
@@ -64,6 +64,10 @@ class Document: ObservableObject {
 
 // Array of image url strings
 let imageArray = [
+    // sftp://jht1493.net//opt/bitnami/apache/htdocs/external_media/test/flower.png
+    //    "https://jht1493.net//external_media/test/flower.png",
+    // /opt/bitnami/apache/htdocs/external_media/test/Flag_of_Jamaica.svg
+//    "https://jht1493.net//external_media/test/Flag_of_Jamaica.svg",
     "https://tisch.nyu.edu/content/dam/tisch/itp/Faculty/dan-osullivan1.jpg.preset.square.jpeg",
     "https://tisch.nyu.edu/content/dam/tisch/itp/alumni/ari_headshot.jpg.preset.square.jpeg.preset.square.jpeg",
     "https://tisch.nyu.edu/content/dam/tisch/itp/Faculty/GabePattern5.jpg.preset.square.jpeg",
