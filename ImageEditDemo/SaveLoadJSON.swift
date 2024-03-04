@@ -26,6 +26,11 @@ func saveJSON<T: Encodable>(fileName: String, val: T) throws {
     let str = String(data: jsonData, encoding: .utf8)!
     // print("Model saveAsJSON encode str \(str)")
     
+    // Terminal command 'cp' to copy output file to Downloads folder
+    // The trailing period means use the same file name as the source
+    print("Model saveAsJSON encode str \(filePath as Any)")
+    print("cp \(filePath.absoluteString.dropFirst(7)) ~/Downloads/." )
+
     try str.write(to: filePath, atomically: true, encoding: .utf8)
 }
 
