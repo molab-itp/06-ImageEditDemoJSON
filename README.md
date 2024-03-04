@@ -13,8 +13,6 @@
 
 ## JSONEncoder and JSONDecoder resources
 
-- [jsonencoder](https://developer.apple.com/documentation/foundation/jsonencoder)
-
 - [jsondecoder](https://developer.apple.com/documentation/foundation/jsondecoder)
 
 - [using_json_with_custom_types](https://developer.apple.com/documentation/foundation/archives_and_serialization/using_json_with_custom_types)
