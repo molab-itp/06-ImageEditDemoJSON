@@ -4,8 +4,9 @@
 
 import Foundation
 
-class Document: ObservableObject {
-    @Published var model: Model
+@Observable
+class Document {
+    var model: Model
     // @Published var items:[ItemModel]
     
     // file name to store JSON for model items

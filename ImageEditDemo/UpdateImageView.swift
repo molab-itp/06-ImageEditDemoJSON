@@ -13,8 +13,8 @@ struct UpdateImageView: View {
     @State var uiImage:UIImage?
     
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var document:Document
-    
+  @Environment(Document.self) var document
+
     var body: some View {
         VStack {
             ZStack {
@@ -70,5 +70,7 @@ struct UpdateImageView: View {
 struct UpdateImageView_Previews: PreviewProvider {
     static var previews: some View {
         UpdateImageView(item: ItemModel())
+        .environment(Document())
+
     }
 }
