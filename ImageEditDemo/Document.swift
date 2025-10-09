@@ -7,7 +7,6 @@ import Foundation
 @Observable
 class Document {
     var model: Model
-    // @Published var items:[ItemModel]
     
     // file name to store JSON for model items
     let saveFileName = "model.json"
@@ -19,14 +18,14 @@ class Document {
         print("Model init")
         
         // For testing:
-//         remove(fileName: saveFileName)
+        // remove(fileName: saveFileName)
         
         model = Model(JSONfileName: saveFileName);
         if initSampleItems && model.items.isEmpty {
             // items for testing
             model.items = []
             addItem(urlStr: imageArray[9], label:"jht1", assetName: "red", systemName: "dog");
-            addItem(urlStr: imageArray[10], label:"jht2", assetName: "yellow", systemName: "circle");
+            addItem(urlStr: imageArray[1], label:"ari", assetName: "yellow", systemName: "circle");
             addItem(urlStr: imageArray[0], label:"dan", assetName: "", systemName: "rectangle");
             saveModel();
         }
@@ -56,11 +55,6 @@ class Document {
         print("Document saveModel")
         model.saveAsJSON(fileName: saveFileName)
     }
-    
-    // Not used
-    //    func newItem() {
-    //        addItem(urlStr: "", label: "", assetName: "", systemName: "")
-    //    }
 }
 
 // Array of image url strings
