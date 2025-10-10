@@ -1,0 +1,25 @@
+{
+  "items" : [
+    {
+      "systemName" : "dog",
+      "urlStr" : "https:\/\/jht1493.net\/a1\/skt\/assets\/webdb\/jht\/IMG_4491.JPEG",
+      "label" : "jht1",
+      "id" : "C1308C63-8BAD-4505-B6F1-2AA49244468B",
+      "assetName" : "red"
+    },
+    {
+      "systemName" : "circle",
+      "urlStr" : "https:\/\/tisch.nyu.edu\/content\/dam\/tisch\/itp\/alumni\/ari_headshot.jpg.preset.square.jpeg.preset.square.jpeg",
+      "label" : "ari",
+      "id" : "2C4D05DD-365C-4C91-A8E2-9528670E3B75",
+      "assetName" : "yellow"
+    },
+    {
+      "systemName" : "rectangle",
+      "urlStr" : "https:\/\/tisch.nyu.edu\/content\/dam\/tisch\/itp\/Faculty\/dan-osullivan1.jpg.preset.square.jpeg",
+      "label" : "dan",
+      "id" : "050438F9-8E11-45A4-8515-FF7CFE144486",
+      "assetName" : ""
+    }
+  ]
+}

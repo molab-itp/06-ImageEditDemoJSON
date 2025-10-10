@@ -10,6 +10,10 @@
     - // Write a value to file that will be stored in the documents directory as JSON
     - // Read a value stored as JSON from a file in the documents directory
 
+```
+example JSON file in project
+  model.json
+```
 
 ## JSONEncoder and JSONDecoder resources
 
